@@ -96,23 +96,62 @@
     </mat-tab>
 
   <!-- ======================================================================== -->
-  
-    <mat-tab label="Employees">
-      <app-tab-template>
-        <div side-title>
-          Employees
-        </div>
-        <div side-content>
-          &lt;to be filled&gt;
-        </div>
-        <div main-title>
-          Results
-        </div>
-        <div main-content>
-          &lt;to be filled&gt;
-        </div>
-      </app-tab-template>
-    </mat-tab>
+  W
+      <mat-tab label="Employees" value="Employees">
+        <app-tab-template>
+          <div side-title>
+            Employees
+          </div>
+          <div side-content>
+            <div>&lt;search bar?&gt;</div>
+            <button mat-button (click)="showNewUserPopup=true" class="gray-button">New</button>
+          </div>
+          <div main-title>
+            Results
+          </div>
+          <div main-content>
+            <table mat-table [dataSource]="instructorsData" *ngIf="usersTableReady" class="mat-elevation-z1">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> # </th>
+               <!-- <td mat-cell *matCellDef="let element"> {{element.id}} </td>  -->
+               <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
+              </ng-container>
+            
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{(element.last_name + "," + " " + element.first_name)}}</td> 
+                
+              </ng-container>
+            
+              <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef> Username </th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Role </th>
+               <!-- <td mat-cell *matCellDef="let element"> {{element.is_active}} </td> -->
+               <td mat-cell *matCellDef="let element">ADMIN</td>
+              </ng-container>
+            
+
+              <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef> Active </th>
+               <!-- <td mat-cell *matCellDef="let element"> {{element.is_active}} </td> -->
+               <td mat-cell *matCellDef="let element"></td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="instructorsRowDef"></tr>
+              <tr mat-row *matRowDef="let row; columns:instructorsRowDef" (click)="rowClicked(row)" [matMenuTriggerFor]="menu"></tr>
+              
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="showEditUserPopup=true">Edit</button>
+                <button mat-menu-item (click)="deleteUserProcess()">Delete</button>
+              </mat-menu>
+            </table>    
+          </div>
+        </app-tab-template>
+      </mat-tab>
 
   <!-- ======================================================================== -->
   
@@ -138,7 +177,8 @@
           
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{instructorNameUtil(element.id)}}. </td>
+              <td mat-cell *matCellDef="let element"> {{instructorNameUtil(element.id)}}</td> 
+              
             </ng-container>
           
             <ng-container matColumnDef="username">
@@ -320,5 +360,3 @@
       </form>
     </mat-card>
   </div>
-
-  

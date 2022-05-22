@@ -24,6 +24,7 @@ export class ManageEntitiesComponent implements OnInit {
   usersRowDef: string[] = ['id', 'name', 'username', 'active'];
   usersData: USER[] = [];
   instructorsData: INSTRUCTOR[] = [];
+  instructorsRowDef: string[] = ['id', 'name', 'username', 'role', 'active'];
   
   newUserForm = new FormGroup({
     first_name: new FormControl('', [Validators.required, Validators.maxLength(20)]),
