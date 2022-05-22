@@ -1,0 +1,43 @@
+<div class="container" fxLayout="row" fxLayout.xs="column">
+  <div class="right-wing">
+      <div class="title">
+          <h2>ENHANCED SCHEDULING SYSTEM </h2>
+          <h4>FOR THE COLLEGE OF ENGINEERING AND </h4>
+          <h4>ARCHITECTURE OF BISU-MC</h4>
+      </div>
+      <div class="picture">
+          <img src="/assets/img/schedule.png">
+      </div>
+      <div class="caption">
+          <h2>Scheduling made easy...</h2>
+      </div>
+      
+  </div>
+  <div class="left-wing">
+      <div class="wrapper">
+          <div class="title">
+              <p>Please sign-in and begin your journey!</p>
+          </div>
+          <div class="form">
+              <form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginProcess()">
+              <div class="input_field">
+                  <label>Username</label>
+                  <input type="text" class="input" formControlName="username">
+              </div>
+          
+              <div class="input_field">
+                  <label>Password</label>
+                  <input type="password" class="input" formControlName="password">
+                  <a href = "#" class="forgot">Forgot Password?</a>
+              </div>
+              <div class="btn">
+                  <input type="submit" class="sign_btn" >
+              </div>
+              </form>
+              
+          </div>
+      </div>
+      <div class="loader" *ngIf="loading"></div>
+  </div>
+  
+</div>

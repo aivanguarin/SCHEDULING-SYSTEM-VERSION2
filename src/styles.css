@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+   /* background-color: #121212; */
+    background-color: rgb(13,17,23);
+    color: aliceblue;
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+th{
+    color: #b3b3b3;
+}
+
+mat-tab{
+    background: #FFFFFF;
+    color: aliceblue;
+}
+
+mat-tab-group{
+    /* background-color: #161616; */
+    background-color: rgb(13,17,23); 
+    color: aliceblue;
+
+}
+
+mat-toolbar{
+   /* background-color: #3d3d3d; */
+   background-color: rgb(13,17,23);
+    color: aliceblue;
+}

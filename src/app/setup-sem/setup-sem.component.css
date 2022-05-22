@@ -1,0 +1,33 @@
+::ng-deep :root{
+    --toolbar: rgb(184, 184, 184);
+}
+
+mat-tab-group{
+    width: 100%;
+}
+
+mat-card{
+    padding:0;
+}
+
+mat-toolbar{
+    background-color: var(--toolbar);
+    font-size: 1rem;
+    height: 3rem;
+}
+
+.card{
+    margin: 1em;
+}
+
+.side-card{
+    width: 30%;
+}
+
+.main-card{
+    width: 70%;
+}
+
+.card-content{
+    padding: 1rem;
+}
