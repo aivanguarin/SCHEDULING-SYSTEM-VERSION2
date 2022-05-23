@@ -26,3 +26,24 @@ export interface INSTRUCTOR {
     updated_at: string,
     updated_by: string
 }
+
+export interface COLLEGE {
+    id: number,
+    college_code: string,
+    college_name: string,
+    is_active: boolean
+}
+
+export interface SUBJECTS {
+    id: number,
+    subject_code: string,
+    description: string,
+    is_active: boolean
+}
+
+export interface COURSE {
+    id: number,
+    course_code: string,
+    course_name: string,
+    is_active: boolean
+}

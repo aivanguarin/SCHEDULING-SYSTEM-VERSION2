@@ -4,8 +4,12 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 import {
   USER,
-  INSTRUCTOR
+  INSTRUCTOR,
+  COLLEGE,
+  SUBJECTS,
+  COURSE
 } from '../types';
+import { CastExpr } from '@angular/compiler';
 
 export interface Users {
   id: number;
@@ -23,8 +27,61 @@ export class ManageEntitiesComponent implements OnInit {
   
   usersRowDef: string[] = ['id', 'name', 'username', 'active'];
   usersData: USER[] = [];
+
   instructorsData: INSTRUCTOR[] = [];
   instructorsRowDef: string[] = ['id', 'name', 'username', 'role', 'active'];
+
+  collegeRowDef: string[] = ['id', 'college_code', 'college_name', 'active'];
+  collegeData: COLLEGE[] = [
+    // --SAMPLE DATA--//
+    {
+      "id" : 1,
+      "college_code" : "CEA",
+      "college_name" : "College of Engineering and Architecture",
+      "is_active" : true
+    },
+    {
+      "id" : 2,
+      "college_code" : "CBAS",
+      "college_name" : "College of Business Arts & Sciences",
+      "is_active" : true
+    }
+  ];
+  
+  subjectsRowDef: string[] = ['id', 'subject_code', 'description', 'active'];
+  subjectsData: SUBJECTS[] = [
+    //SAMPLE DATA
+    {
+      "id" : 1,
+      "subject_code" : "CPE 121",
+      "description" : "Object Oriented Programming",
+      "is_active" : true
+    },
+    {
+      "id" : 1,
+      "subject_code" : "CPE 122",
+      "description" : "Discrete Mathematics",
+      "is_active" : true
+    }
+  ];
+
+    coursesRowDef : string[] = ['id', 'course_code', 'course_name', 'active'];
+    courseData : COURSE[] = [
+      //SAMPLE DATA
+      {
+        "id" : 1,
+        "course_code" : "BSCPE",
+        "course_name" : "Bachelor of Science in Computer Engineering",
+        "is_active" : true
+      },
+      {
+      "id" : 2,
+      "course_code" : "BSCE",
+      "course_name" : "Bachelor of Science in Civil Engineering",
+      "is_active" : true
+      }
+    ]
+
   
   newUserForm = new FormGroup({
     first_name: new FormControl('', [Validators.required, Validators.maxLength(20)]),
