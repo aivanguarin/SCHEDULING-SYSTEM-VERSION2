@@ -1,0 +1,40 @@
+
+
+mat-card{
+    padding:0;
+}
+
+mat-toolbar{
+    background-color: #424242;
+    font-size: 1rem;
+    height: 3rem;
+    color: #b3b3b3;
+    
+}
+
+mat-card>div{
+   /* background-color: white; */
+    /* background-color: #161616; */
+    background-color: #424242;
+   /* color: aliceblue;  */
+}
+
+.card{
+    margin: 1em;
+}
+
+.side-card{
+    width: 30%;
+}
+
+.main-card{
+    width: 70%;
+}
+
+.card-content{
+    padding: 1rem;
+}
+
+.main-content{
+    width: 100%;
+}

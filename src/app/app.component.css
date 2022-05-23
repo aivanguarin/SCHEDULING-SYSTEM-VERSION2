@@ -1,0 +1,12 @@
+html{
+    background-color: #121212;
+}
+
+.content{
+    padding-top: 15px;
+    width: min(100%, 1200px);
+}
+
+.spacer{
+    flex: 2 2 auto;
+}
