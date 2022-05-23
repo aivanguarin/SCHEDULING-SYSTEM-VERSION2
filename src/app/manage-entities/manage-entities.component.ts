@@ -7,7 +7,9 @@ import {
   INSTRUCTOR,
   COLLEGE,
   SUBJECTS,
-  COURSE
+  COURSE,
+  ROOM,
+  SEMESTER
 } from '../types';
 import { CastExpr } from '@angular/compiler';
 
@@ -80,7 +82,57 @@ export class ManageEntitiesComponent implements OnInit {
       "course_name" : "Bachelor of Science in Civil Engineering",
       "is_active" : true
       }
-    ]
+    ];
+
+    roomsRowDef : string[] = ['id', 'room_code', 'description', 'type', 'active'];
+    roomsData : ROOM[] = [
+      //SAMPLE DATA...
+      {
+        "id" : 1,
+        "room_code" : "RM 311",
+        "description" : "CPE",
+        "type" : "LEC",
+        "is_active" : true
+      },
+      {
+        "id" : 2,
+        "room_code" : "101",
+        "description" : "ME",
+        "type" : "LAB",
+        "is_active" : true
+      }
+    ];
+
+    semesterRowDef : string[] = ['id', 'school_year', 'semester','campus_director', 'active', 'default'];
+    semesterData : SEMESTER[] = [
+      //SAMPLE DATA
+      {
+        "id" : 1,
+        "school_year" : "2020-2021",
+        "semester" : 1,
+        "campus_director" : "Dr. Ernesto Rulida",
+        "is_active" : true,
+        "default" : 0
+      },
+
+      {
+        "id" : 2,
+        "school_year" : "2020-2021",
+        "semester" : 2,
+        "campus_director" : "Dr. Ernesto Rulida",
+        "is_active" : true,
+        "default" : 0
+      },
+
+      {
+        "id" : 3,
+        "school_year" : "2021-2022",
+        "semester" : 1,
+        "campus_director" : "Uzumaki Naruto",
+        "is_active" : true,
+        "default" : 1
+      }
+    ];
 
   
   newUserForm = new FormGroup({

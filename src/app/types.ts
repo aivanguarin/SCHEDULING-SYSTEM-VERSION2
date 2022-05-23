@@ -47,3 +47,20 @@ export interface COURSE {
     course_name: string,
     is_active: boolean
 }
+
+export interface ROOM {
+    id: number,
+    room_code: string,
+    description: string,
+    type: string,
+    is_active: boolean
+}
+
+export interface SEMESTER {
+    id: number,
+    school_year: string,
+    semester: number,
+    campus_director: string,
+    is_active: true,
+    default: number
+}
